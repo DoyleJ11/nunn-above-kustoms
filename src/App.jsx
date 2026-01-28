@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import InstagramStrip from "./components/InstagramStrip";
 import Footer from "./components/Footer";
+import QuoteCTA from "./components/QuoteCTA";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Services />
         <About />
         <Contact />
+        <QuoteCTA />
         <InstagramStrip />
       </main>
       <Footer />

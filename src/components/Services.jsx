@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function IconWrench(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -85,7 +87,7 @@ function IconShield(props) {
 const services = [
   {
     title: "Autobody repair",
-    desc: "Collision repair, panels, fitment, and refinishing with clean lines and correct gaps.",
+    desc: "Collision repair, fitment, and refinishing with clean lines and correct gaps.",
     icon: IconCar,
   },
   {
@@ -115,7 +117,42 @@ const services = [
   },
 ];
 
+function ServiceCard({ s }) {
+  const Icon = s.icon;
+  return (
+    <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-panel p-5">
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+        <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-neonCyan/10 blur-2xl" />
+        <div className="absolute -right-24 -bottom-24 h-56 w-56 rounded-full bg-neonPink/10 blur-2xl" />
+      </div>
+
+      <div className="relative">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-neonCyan">
+            <Icon className="h-5 w-5" />
+          </div>
+          <h3 className="text-base font-semibold text-white">{s.title}</h3>
+        </div>
+
+        <p className="mt-3 text-sm leading-relaxed text-white/70">{s.desc}</p>
+
+        <div className="mt-5">
+          <a
+            href="#quote"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
+          >
+            Get a quote <span className="text-white/40">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Services() {
+  const [showAll, setShowAll] = useState(false);
+  const mobileServices = showAll ? services : services.slice(0, 3);
+
   return (
     <section id="services" className="bg-ink">
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
@@ -134,54 +171,53 @@ export default function Services() {
           </div>
 
           <a
-            href="#contact"
+            href="#quote"
             className="hidden rounded-full bg-neonCyan px-5 py-2.5 text-sm font-semibold text-ink hover:opacity-90 md:inline-flex"
           >
             Request a quote
           </a>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={s.title}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-panel p-5"
-              >
-                <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                  <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-neonCyan/10 blur-2xl" />
-                  <div className="absolute -right-24 -bottom-24 h-56 w-56 rounded-full bg-neonPink/10 blur-2xl" />
-                </div>
-
-                <div className="relative">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-neonCyan">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="text-base font-semibold text-white">
-                      {s.title}
-                    </h3>
-                  </div>
-
-                  <p className="mt-3 text-sm leading-relaxed text-white/70">
-                    {s.desc}
-                  </p>
-
-                  <div className="mt-5">
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
-                    >
-                      Get a quote
-                      <span className="text-white/40">→</span>
-                    </a>
-                  </div>
-                </div>
+        <div className="mt-10 sm:hidden">
+          <div className="-mx-4 flex gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {services.map((s) => (
+              <div key={s.title} className="w-[86%] shrink-0">
+                <ServiceCard s={s} />
               </div>
-            );
-          })}
+            ))}
+          </div>
+
+          <div className="mt-3 flex items-center justify-between text-xs text-white/50">
+            <span>Swipe for more</span>
+            <span className="text-white/30">→</span>
+          </div>
         </div>
+
+        <div className="mt-10 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => (
+            <ServiceCard key={s.title} s={s} />
+          ))}
+        </div>
+
+        {/* <div className="mt-10 grid gap-4 sm:hidden">
+          {mobileServices.map((s) => (
+            <ServiceCard key={s.title} s={s} />
+          ))}
+
+          <button
+            type="button"
+            onClick={() => setShowAll((v) => !v)}
+            className="mt-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            {showAll ? "Show less" : "Show all services"}
+          </button>
+        </div>
+
+        <div className="mt-10 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => (
+            <ServiceCard key={s.title} s={s} />
+          ))}
+        </div> */}
 
         {/* Trust row */}
         <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 md:grid-cols-3">

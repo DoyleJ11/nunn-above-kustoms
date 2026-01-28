@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Nunn Above Kustoms"
-                className="h-10 w-10 rounded-md object-cover ring-1 ring-white/10"
+                className="h-10 w-auto rounded-md object-cover ring-1 ring-white/10"
               />
               <div>
                 <div className="text-sm font-semibold text-white">
@@ -40,7 +40,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="#contact"
+                href="#quote"
                 className="rounded-full bg-neonCyan px-4 py-2 text-sm font-semibold text-ink hover:opacity-90"
               >
                 Request a quote

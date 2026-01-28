@@ -35,7 +35,6 @@ export default function Contact() {
                 >
                   Text
                 </a>
-                {/* If you learn his preferred email tomorrow, swap this in */}
                 {/* <a href="mailto:..." className="...">Email</a> */}
               </div>
             </div>
@@ -62,11 +61,6 @@ export default function Contact() {
                   <div>P.O. Box 10624</div>
                   <div>Bainbridge Island, WA 98110</div>
                 </div>
-              </div>
-
-              <div className="mt-5 text-xs text-white/50">
-                Next step: we’ll add a quote form here once you confirm the
-                details you want to collect.
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Nunn Above Kustoms"
-            className="h-9 w-9 rounded-md object-cover ring-1 ring-white/10"
+            className="h-14 w-auto rounded-xl px-1 py-1 object-contain ring-1 ring-white/10 drop-shadow-[0_0_18px_rgba(255,59,212,0.18)]"
           />
           <div className="leading-tight">
             <div className="text-sm font-semibold tracking-wide">
@@ -35,7 +35,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="#contact"
+            href="#quote"
             className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/15"
           >
             Request a quote
