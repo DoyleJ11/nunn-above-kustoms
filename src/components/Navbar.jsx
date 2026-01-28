@@ -3,7 +3,7 @@ import logo from "../assets/brand/logo.jpg";
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
         <a href="#" className="flex items-center gap-3">
           <img
             src={logo}
