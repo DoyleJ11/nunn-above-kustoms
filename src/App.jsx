@@ -11,7 +11,9 @@ import QuoteCTA from "./components/QuoteCTA";
 export default function App() {
   return (
     <div className="min-h-screen bg-ink text-white">
-      <Navbar />
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
       <main>
         <Hero />
         <FeaturedWork />
