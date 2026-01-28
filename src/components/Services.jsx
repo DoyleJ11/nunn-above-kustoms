@@ -121,7 +121,7 @@ function ServiceCard({ s }) {
   const Icon = s.icon;
   return (
     <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-panel p-5">
-      <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 ease-in-out group-hover:opacity-100">
         <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-neonCyan/10 blur-2xl" />
         <div className="absolute -right-24 -bottom-24 h-56 w-56 rounded-full bg-neonPink/10 blur-2xl" />
       </div>
