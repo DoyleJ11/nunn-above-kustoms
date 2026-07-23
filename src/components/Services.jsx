@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function IconWrench(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -87,27 +85,28 @@ function IconShield(props) {
 const services = [
   {
     title: "Autobody repair",
-    desc: "Collision repair, fitment, and refinishing with clean lines and correct gaps.",
+    desc: "Collision repair, scratch and dent repair, and fitment with clean lines and proper gaps.",
     icon: IconCar,
   },
   {
     title: "Custom paint",
-    desc: "Metalflake, pearls, candies, and modern clears — prepped right so it lasts.",
+    desc: "Metalflake, pearls, candies, custom lowrider designs, and everything in-between — all prepped right so it lasts and looks brilliant!",
     icon: IconSpark,
   },
   {
     title: "Restoration",
-    desc: "Bring classics back: rust repair, paint correction, and full refresh work.",
+    desc: "Bring any component or the entire vehicle back to life: rust repair, electronic diagnostics, mechanical work, and fabrication.",
     icon: IconShield,
   },
   {
     title: "Custom design",
-    desc: "One-off details, accent work, and creative finishes tailored to your vision.",
+    desc: "One-off design and fabrication, custom stereo system installs, interior and exterior components, and exhaust fabrication — all tailored to your vision.",
     icon: IconSpark,
   },
   {
+    // TODO(owner Q6): owner's list titles this just "Refinishing" — confirm rename from "Refinishing & correction"
     title: "Refinishing & correction",
-    desc: "Respray, blend, wet sand, and polish for a finish that pops in the sun.",
+    desc: "Got small chips and scratches? We repair those, plus exterior detail and polish, to give your vehicle a finish that pops in the sun.",
     icon: IconShield,
   },
   {
@@ -150,9 +149,6 @@ function ServiceCard({ s }) {
 }
 
 export default function Services() {
-  const [showAll, setShowAll] = useState(false);
-  const mobileServices = showAll ? services : services.slice(0, 3);
-
   return (
     <section id="services" className="bg-ink">
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
@@ -162,7 +158,7 @@ export default function Services() {
               SERVICES
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-              Work that looks right up close
+              Work done right that looks right up close
             </h2>
             <p className="mt-3 max-w-prose text-sm text-white/70">
               Specializing in paint, body, restoration, and custom finishes for
@@ -199,26 +195,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* <div className="mt-10 grid gap-4 sm:hidden">
-          {mobileServices.map((s) => (
-            <ServiceCard key={s.title} s={s} />
-          ))}
-
-          <button
-            type="button"
-            onClick={() => setShowAll((v) => !v)}
-            className="mt-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
-          >
-            {showAll ? "Show less" : "Show all services"}
-          </button>
-        </div>
-
-        <div className="mt-10 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <ServiceCard key={s.title} s={s} />
-          ))}
-        </div> */}
-
         {/* Trust row */}
         <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 md:grid-cols-3">
           <div>
@@ -234,7 +210,7 @@ export default function Services() {
               Clear expectations
             </div>
             <div className="mt-1 text-sm text-white/70">
-              You’ll get a realistic scope, timeline, and finish plan.
+              You’ll get a realistic estimate, timeline and finish plan.
             </div>
           </div>
           <div>
@@ -242,7 +218,7 @@ export default function Services() {
               Craftsmanship first
             </div>
             <div className="mt-1 text-sm text-white/70">
-              Prep, fitment, and detail — not shortcuts.
+              Prep, fitment and detail — not shortcuts.
             </div>
           </div>
         </div>

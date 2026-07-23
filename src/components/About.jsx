@@ -26,8 +26,8 @@ export default function About() {
           <p className="mt-4 text-lg leading-relaxed text-white/70">
             <span className="text-white">Nunn Above Kustoms</span> specializes
             in autobody, paint refinishing, restoration, and custom design —
-            with a signature focus on metalflake finishes for bumpers, roofs,
-            and custom parts.
+            with a signature focus on metalflake finishes for roofs, entire
+            vehicles, and custom parts.
           </p>
 
           <p className="mt-4 text-lg leading-relaxed text-white/70">
@@ -75,7 +75,8 @@ export default function About() {
             <div className="relative h-full w-full rounded-[calc(1.5rem-1px)] border border-white/10 bg-panel p-5">
               <div className="text-sm font-semibold text-white">Training</div>
               <div className="mt-3 text-sm text-white/70">
-                <div>• B.A. Studio Art — Linfield College</div>
+                {/* TODO(owner Q7): owner's note says change this to "B.A. Liberal Arts, major Studio Art" (no school named). Kept "Linfield College" for now — confirm whether to drop it, and whether the inline bio sentence below ("B.A. in Studio Art (Linfield College)") should also change to match. */}
+                <div>• B.A. Liberal Arts, major Studio Art — Linfield College</div>
                 <div className="mt-2">
                   • Autobody & Collision Repair — Clover Park Technical College
                 </div>
