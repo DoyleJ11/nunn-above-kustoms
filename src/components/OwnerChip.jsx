@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import jackPhoto from "../assets/photos/jack.JPEG";
 
 export default function OwnerChip({
   name = "Jack Elliott Nunn",
@@ -83,15 +84,11 @@ export default function OwnerChip({
               <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-panel shadow-2xl">
                 <div className="relative aspect-[4/5] w-full">
                   {/* Portrait */}
-                  {photoSrc ? (
-                    <img
-                      src={photoSrc}
-                      alt={name}
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(66,215,255,.25),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(255,59,212,.18),transparent_60%),linear-gradient(to_bottom,rgba(255,255,255,.06),rgba(0,0,0,.0))]" />
-                  )}
+                  <img
+                    src={photoSrc ?? jackPhoto}
+                    alt={name}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
 
                   {/* Vignette */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/75" />

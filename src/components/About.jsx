@@ -31,7 +31,6 @@ export default function About() {
           </p>
 
           <p className="mt-4 text-lg leading-relaxed text-white/70">
-            Owner & designer{" "}
             <span className="mt-2 inline-flex sm:mt-0 sm:inline-flex">
               <OwnerChip />
             </span>{" "}
@@ -76,7 +75,9 @@ export default function About() {
               <div className="text-sm font-semibold text-white">Training</div>
               <div className="mt-3 text-sm text-white/70">
                 {/* TODO(owner Q7): owner's note says change this to "B.A. Liberal Arts, major Studio Art" (no school named). Kept "Linfield College" for now — confirm whether to drop it, and whether the inline bio sentence below ("B.A. in Studio Art (Linfield College)") should also change to match. */}
-                <div>• B.A. Liberal Arts, major Studio Art — Linfield College</div>
+                <div>
+                  • B.A. Liberal Arts, major Studio Art — Linfield College
+                </div>
                 <div className="mt-2">
                   • Autobody & Collision Repair — Clover Park Technical College
                 </div>
