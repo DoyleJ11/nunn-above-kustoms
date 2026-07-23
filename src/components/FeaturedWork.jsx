@@ -4,7 +4,7 @@ import international02 from "../assets/photos/international_02.jpg";
 import international03 from "../assets/photos/international_03.jpg";
 import internationalFront from "../assets/photos/international_front.jpg";
 import internationalBefore from "../assets/photos/international_before.jpg";
-import corolla01 from "../assets/photos/corolla_01.jpg";
+import corolla01 from "../assets/photos/corolla_plain.JPEG";
 import slide02 from "../assets/photos/slide_02.jpg";
 import slide03 from "../assets/photos/slide_03.jpg";
 import slide05 from "../assets/photos/slide_05.jpg";
